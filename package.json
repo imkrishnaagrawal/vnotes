@@ -1,13 +1,27 @@
 {
-	"name": "notes",
-	"displayName": "notes",
+	"name": "vnotes",
+	"author": {
+		"name" : "Krishna Agrawal",
+		"email" : "imkrishnaagrawal@gmail.com"
+	},
+	"publisher": "Krishna Agrawal",
+	"funding": [
+		{
+		  "type" : "patreon",
+		  "url" : "https://www.patreon.com/imkrishnaagrawal"
+		}
+	  ],
+	"icon": "resources/notes-icon.png",
+	"displayName": "Notes",
 	"description": "you can take notes",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.52.0"
 	},
 	"keywords": [
-		"notes"
+		"notes",
+		"markdown",
+		"asciidoc"
 	],
 	"categories": [
 		"Other"
@@ -32,6 +46,11 @@
 					"type": "string",
 					"default": "",
 					"description": "folder location for notes."
+				},
+				"notes.notesExtension": {
+					"type": "string",
+					"default": "adoc",
+					"description": "extension type for notes."
 				}
 			}
 		},

@@ -10,7 +10,7 @@ export function activate(context: vscode.ExtensionContext) {
 	const notesLocation = <string>vscode.workspace.getConfiguration().get('notes.notesLocation');
 	const notesExtension = <string>vscode.workspace.getConfiguration().get('notes.notesExtension');
 
-	const notesProvider = new NotesProvider(notesLocation, notesExtension === undefined ? 'adoc': notesExtension);
+	const notesProvider = new NotesProvider(notesLocation, notesExtension);
 
 	vscode.window.registerTreeDataProvider('notesView', notesProvider);
 
