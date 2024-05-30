@@ -4,7 +4,7 @@
     "name": "Krishna Agrawal",
     "email": "imkrishnaagrawal@gmail.com"
   },
-  "publisher": "Krishna Agrawal",
+  "publisher": "KrishnaAgrawal",
   "funding": [
     {
       "type": "patreon",
@@ -184,3 +184,5 @@
     "fs-extra": "^11.2.0"
   }
 }
+
+
