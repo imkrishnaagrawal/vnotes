@@ -1,11 +1,29 @@
 {
   "name": "vnotes",
+  "author": {
+    "name": "Krishna Agrawal",
+    "email": "imkrishnaagrawal@gmail.com"
+  },
+  "publisher": "Krishna Agrawal",
+  "funding": [
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/imkrishnaagrawal"
+    }
+  ],
   "displayName": "vnotes",
   "description": "Notes application",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.89.0"
   },
+  "keywords": [
+    "vnotes",
+    "vnote",
+    "notes",
+    "markdown",
+    "asciidoc"
+  ],
   "categories": [
     "Other"
   ],
@@ -47,25 +65,25 @@
         "command": "extension.newNote",
         "title": "New Note File",
         "icon": {
-					"light": "resources/light/add.svg",
-					"dark": "resources/dark/add.svg"
-				}
+          "light": "resources/light/add.svg",
+          "dark": "resources/dark/add.svg"
+        }
       },
       {
         "command": "extension.renameNote",
         "title": "Rename Note File",
         "icon": {
-					"light": "resources/light/rename.svg",
-					"dark": "resources/dark/rename.svg"
-				}
+          "light": "resources/light/rename.svg",
+          "dark": "resources/dark/rename.svg"
+        }
       },
       {
         "command": "extension.deleteNote",
         "title": "Delete Note File",
         "icon": {
-					"light": "resources/light/delete.svg",
-					"dark": "resources/dark/delete.svg"
-				}
+          "light": "resources/light/delete.svg",
+          "dark": "resources/dark/delete.svg"
+        }
       },
       {
         "command": "extension.openNote",
@@ -75,9 +93,9 @@
         "command": "extension.refreshNotes",
         "title": "Refresh Notes",
         "icon": {
-					"light": "resources/light/refresh.svg",
-					"dark": "resources/dark/refresh.svg"
-				}
+          "light": "resources/light/refresh.svg",
+          "dark": "resources/dark/refresh.svg"
+        }
       }
     ],
     "keybindings": [
