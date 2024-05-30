@@ -21,7 +21,7 @@ This extension contributes the following settings `settings.json`:
 
 Extension is in beta release and auto-preview supports available for asciidoc and markdown.
 
-### 0.0.1
+### 0.1.0
 
 Beta release of extension support asciidoc and markdown with auto-preview.
 
