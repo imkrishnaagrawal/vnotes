@@ -1,5 +1,5 @@
 {
-  "name": "vnotes",
+  "name": "vnote",
   "author": {
     "name": "Krishna Agrawal",
     "email": "imkrishnaagrawal@gmail.com"
@@ -11,14 +11,14 @@
       "url": "https://www.patreon.com/imkrishnaagrawal"
     }
   ],
-  "displayName": "vnotes",
+  "displayName": "vnote",
   "description": "Notes application",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.89.0"
   },
   "keywords": [
-    "vnotes",
+    "vnote",
     "vnote",
     "notes",
     "markdown",
@@ -30,7 +30,7 @@
   "icon": "resources/notes-icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/imkrishnaagrawal/vnotes"
+    "url": "https://github.com/imkrishnaagrawal/vnote"
   },
   "activationEvents": [],
   "main": "./dist/extension.js",
@@ -39,22 +39,22 @@
       "type": "object",
       "title": "Configuration",
       "properties": {
-        "vnotes.notesLocation": {
+        "vnote.notesLocation": {
           "type": "string",
-          "default": "~/vnotes",
+          "default": "~/vnote",
           "description": "folder location for notes."
         },
-        "vnotes.notesDefaultExtension": {
+        "vnote.notesDefaultExtension": {
           "type": "string",
           "default": "md",
           "description": "extension type for notes."
         },
-        "vnotes.openPreview": {
+        "vnote.openPreview": {
           "type": "boolean",
           "default": false,
           "description": "auto preview file when clicked."
         },
-        "vnotes.ignoredExtensions": {
+        "vnote.ignoredExtensions": {
           "type": "string",
           "description": "extension to ignore in explorer"
         }
@@ -184,5 +184,4 @@
     "fs-extra": "^11.2.0"
   }
 }
-
 

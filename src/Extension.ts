@@ -3,14 +3,14 @@ import { NotesProvider } from './notes-provider';
 import { resolveHome } from './utils';
 
 export function activate(context: vscode.ExtensionContext) {
-  const notesLocation = <string>vscode.workspace.getConfiguration().get('vnotes.notesLocation');
-  let notesExtension = <string>vscode.workspace.getConfiguration().get('vnotes.notesDefaultExtension');
+  const notesLocation = <string>vscode.workspace.getConfiguration().get('vnote.notesLocation');
+  let notesExtension = <string>vscode.workspace.getConfiguration().get('vnote.notesDefaultExtension');
   if (notesExtension.startsWith('.')) {
     notesExtension = notesExtension.slice(1);
   }
-  const ignoredExtensions = <string>vscode.workspace.getConfiguration().get('vnotes.ignoredExtensions');
+  const ignoredExtensions = <string>vscode.workspace.getConfiguration().get('vnote.ignoredExtensions');
   const ignore = ignoredExtensions.split(',').map(extension => extension.startsWith('.') ? extension.slice(1) : extension);
-  const autoPreview = <boolean>vscode.workspace.getConfiguration().get('vnotes.openPreview');
+  const autoPreview = <boolean>vscode.workspace.getConfiguration().get('vnote.openPreview');
 
   const notesProvider = new NotesProvider(resolveHome(notesLocation), notesExtension, autoPreview, ignore);
 
