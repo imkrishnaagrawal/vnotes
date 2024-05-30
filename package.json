@@ -1,195 +1,168 @@
 {
-	"name": "vnotes",
-	"author": {
-		"name" : "Krishna Agrawal",
-		"email" : "imkrishnaagrawal@gmail.com"
-	},
-	"publisher": "Krishna Agrawal",
-	"funding": [
-		{
-		  "type" : "patreon",
-		  "url" : "https://www.patreon.com/imkrishnaagrawal"
-		}
-	  ],
-	"icon": "resources/notes-icon.png",
-	"displayName": "Notes",
-	"description": "you can take notes",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.52.0"
-	},
-	"keywords": [
-		"notes",
-		"markdown",
-		"asciidoc"
-	],
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"onView:notesView",
-		"onCommand:vnotes.deleteNote",
-		"onCommand:vnotes.listNotes",
-		"onCommand:vnotes.newNote",
-		"onCommand:vnotes.refreshNotes",
-		"onCommand:vnotes.renameNote",
-		"onCommand:vnotes.setupNotes",
-		"onCommand:vnotes.openFile"
-	],
-	"main": "./dist/extension.js",
-	"contributes": {
-		"configuration": {
-			"type": "object",
-			"title": "Configuration",
-			"properties": {
-				"notes.notesLocation": {
-					"type": "string",
-					"default": "",
-					"description": "folder location for notes."
-				},
-				"notes.notesExtension": {
-					"type": "string",
-					"default": "adoc",
-					"description": "extension type for notes."
-				}
-			}
-		},
-		"commands": [
-			{
-				"command": "vnotes.openFile",
-				"title": "Open Notes"
-			},
-			{
-				"command": "vnotes.deleteNote",
-				"title": "Delete Note",
-				"icon": {
-					"light": "resources/light/delete.svg",
-					"dark": "resources/dark/delete.svg"
-				}
-			},
-			{
-				"command": "vnotes.listNotes",
-				"title": "List Notes",
-				"category": "Notes"
-			},
-			{
-				"command": "vnotes.newNote",
-				"title": "New Note",
-				"category": "Notes",
-				"icon": {
+  "name": "vnotes",
+  "displayName": "vnotes",
+  "description": "Notes application",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "resources/notes-icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imkrishnaagrawal/vnotes"
+  },
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Configuration",
+      "properties": {
+        "vnotes.notesLocation": {
+          "type": "string",
+          "default": "~/vnotes",
+          "description": "folder location for notes."
+        },
+        "vnotes.notesDefaultExtension": {
+          "type": "string",
+          "default": "md",
+          "description": "extension type for notes."
+        },
+        "vnotes.openPreview": {
+          "type": "boolean",
+          "default": false,
+          "description": "auto preview file when clicked."
+        },
+        "vnotes.ignoredExtensions": {
+          "type": "string",
+          "description": "extension to ignore in explorer"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "extension.newNote",
+        "title": "New Note File",
+        "icon": {
 					"light": "resources/light/add.svg",
 					"dark": "resources/dark/add.svg"
 				}
-			},
-			{
-				"command": "vnotes.refreshNotes",
-				"title": "Refresh Notes",
-				"category": "Notes",
-				"icon": {
-					"light": "resources/light/refresh.svg",
-					"dark": "resources/dark/refresh.svg"
-				}
-			},
-			{
-				"command": "vnotes.renameNote",
-				"title": "Rename Note",
-				"icon": {
+      },
+      {
+        "command": "extension.renameNote",
+        "title": "Rename Note File",
+        "icon": {
 					"light": "resources/light/rename.svg",
 					"dark": "resources/dark/rename.svg"
 				}
-			},
-			{
-				"command": "vnotes.setupNotes",
-				"title": "Select notes storage location.",
-				"category": "Notes"
-			}
-		],
-		"keybindings": [
-			{
-				"command": "vnotes.listNotes",
-				"key": "alt+l",
-				"mac": "alt+l"
-			},
-			{
-				"command": "vnotes.newNote",
-				"key": "alt+n",
-				"mac": "alt+n"
-			}
-		],
-		"menus": {
-			"view/title": [
-				{
-					"command": "vnotes.refreshNotes",
-					"when": "view == notesView",
-					"group": "navigation@1"
-				},
-				{
-					"command": "vnotes.newNote",
-					"when": "view == notesView",
-					"group": "navigation@2"
+      },
+      {
+        "command": "extension.deleteNote",
+        "title": "Delete Note File",
+        "icon": {
+					"light": "resources/light/delete.svg",
+					"dark": "resources/dark/delete.svg"
 				}
-			],
-			"view/item/context": [
-				{
-					"command": "vnotes.renameNote",
-					"when": "view == notesView && viewItem == note",
-					"group": "inline@1"
-				},
-				{
-					"command": "vnotes.deleteNote",
-					"when": "view == notesView && viewItem == note",
-					"group": "inline@2"
+      },
+      {
+        "command": "extension.openNote",
+        "title": "Open Note File"
+      },
+      {
+        "command": "extension.refreshNotes",
+        "title": "Refresh Notes",
+        "icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
 				}
-			]
-		},
-		"viewsContainers": {
-			"activitybar": [
-				{
-					"id": "notesContainer",
-					"title": "Notes",
-					"icon":  "resources/notes-icon.svg"
-
-				}
-			]
-		},
-		"views": {
-			"notesContainer": [
-				{
-					"id": "notesView",
-					"name": "Global"
-				}
-			]
-		}
-	},
-	"scripts": {
-		"vscode:prepublish": "yarn run package",
-		"compile": "webpack --config ./build/node-extension.webpack.config.js",
-		"watch": "webpack --watch --config ./build/node-extension.webpack.config.js",
-		"package": "webpack --mode production --devtool hidden-source-map --config ./build/node-extension.webpack.config.js",
-		"test-compile": "tsc -p ./",
-		"test-watch": "tsc -watch -p ./",
-		"pretest": "yarn run test-compile && yarn run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/glob": "^7.1.3",
-		"@types/mocha": "^8.0.4",
-		"@types/node": "^12.11.7",
-		"@types/rimraf": "^3.0.0",
-		"@types/vscode": "^1.52.0",
-		"@typescript-eslint/eslint-plugin": "^4.9.0",
-		"@typescript-eslint/parser": "^4.9.0",
-		"eslint": "^7.15.0",
-		"glob": "^7.1.6",
-		"mocha": "^8.1.3",
-		"ts-loader": "^8.0.11",
-		"typescript": "^4.1.2",
-		"vscode-test": "^1.4.1",
-		"webpack": "^5.10.0",
-		"webpack-cli": "^4.2.0"
-	},
-	"dependencies": {
-		"@types/mkdirp": "^1.0.1"
-	}
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.listNotes",
+        "key": "alt+l",
+        "mac": "alt+l"
+      },
+      {
+        "command": "extension.newNote",
+        "key": "alt+n",
+        "mac": "alt+n"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "extension.refreshNotes",
+          "when": "view == notesView",
+          "group": "navigation@1"
+        },
+        {
+          "command": "extension.newNote",
+          "when": "view == notesView",
+          "group": "navigation@2"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "extension.renameNote",
+          "when": "view == notesView && viewItem == note",
+          "group": "inline@1"
+        },
+        {
+          "command": "extension.deleteNote",
+          "when": "view == notesView && viewItem == note",
+          "group": "inline@2"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "notesContainer",
+          "title": "Notes",
+          "icon": "resources/notes-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "notesContainer": [
+        {
+          "id": "notesView",
+          "name": "Global"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.89.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.57.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0"
+  }
 }

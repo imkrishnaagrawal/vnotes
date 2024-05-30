@@ -22,7 +22,11 @@
         "titleBar.activeBackground": "#ffffff",
         "titleBar.activeForeground": "#15202b",
         "titleBar.inactiveBackground": "#ffffff99",
-        "titleBar.inactiveForeground": "#15202b99"
+        "titleBar.inactiveForeground": "#15202b99",
+        "commandCenter.border": "#15202b99",
+        "sash.hoverBorder": "#ffffff",
+        "statusBarItem.remoteBackground": "#ffffff",
+        "statusBarItem.remoteForeground": "#15202b"
     },
     "peacock.color": "white",
     "cSpell.words": [

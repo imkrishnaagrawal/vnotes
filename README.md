@@ -3,7 +3,7 @@
 
 vnotes is simple extension allow user to create notes and store them at single location anywhere on the system.
 
-![Preview](snapshot/snapshot.png)
+
 ## Requirements
   vnotes support different types of files like markdown and asciidoc. based on type of notes you're using support plugins needs be installed.
   * [AsciiDoc Extension](https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode)
@@ -14,8 +14,8 @@ vnotes is simple extension allow user to create notes and store them at single l
 
 This extension contributes the following settings `settings.json`:
 
-* `notes.notesLocation`: set the location for the notes.
-* `notes.notesExtension`: set file type `default` is `.adoc`
+* `vnotes.notesLocation`: set the location for the notes. `default` is `~/vnotes`
+* `vnotes.notesDefaultExtension`: set file type `default` is `md`
 *
 ## Release Notes
 
