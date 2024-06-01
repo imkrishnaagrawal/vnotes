@@ -17,7 +17,9 @@ jobs:
       - name: Build Code
         run: npm run pretest
       - name: Debug
-        run: ls -la
+        run: |
+           pwd
+           ls out
       - name: Publish to Open VSX Registry
         uses: HaaLeo/publish-vscode-extension@v1
         id: publishToOpenVSX
