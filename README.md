@@ -19,13 +19,10 @@ This extension contributes the following settings `settings.json`:
 * `vnote.openPreview`: if set extension will try to open preview (preview extensions are not included)
 * `vnote.ignoredExtensions`: by default notes explorer now list all files in vnotes folder however you can add extensions to ignoreExtensions to ignore them. eg. `vnote.ignoredExtensions:'ts,js'`
 
-## Release Notes
-
+### 0.4.0
 * `vnotes.notesExtension` is now deprecated in favour of `vnote.notesDefaultExtension`. now you can create files with any extension when creating files.
 * changing default behavior of only list files with `vnotes.notesExtension` and now its list all extensions. files can be ignored using `vnote.ignoredExtensions` option.
 * rename input have old filename as default value.
-
-### 0.2.0
 
 Beta release of extension support asciidoc and markdown with auto-preview.
 

@@ -33,11 +33,14 @@ export class NotesProvider implements vscode.TreeDataProvider<TreeItem> {
   }
 
   async renameNote(uri: vscode.Uri): Promise<void> {
-    const newName = await vscode.window.showInputBox({ prompt: 'Enter the new name of the file' , value: path.basename(uri.fsPath)});
+    let newName = await vscode.window.showInputBox({ prompt: 'Enter the new name of the file' , value: path.basename(uri.fsPath)});
     if (newName) {
       if (this.autoPreview === true){
         await vscode.commands.executeCommand("workbench.action.closeEditorsInOtherGroups");
         await vscode.commands.executeCommand('workbench.action.closeActiveEditor');
+      }
+      if (!newName.includes('.')) {
+        newName = `${newName}.${this.notesExtension}`;
       }
       this.fp.renameFile(uri, newName);
       this.refresh();
